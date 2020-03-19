@@ -21,6 +21,11 @@ export default {
       name: "LinkedIn",
       url: "https://linkedin.com/in/sean-w-lawrence",
       logo: "linked-in-logo.png"
+    },
+    {
+      name: "Website",
+      url: "https://seanlawrence.netlify.com",
+      logo: "website-logo.png"
     }
   ]
 };
