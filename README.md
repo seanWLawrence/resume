@@ -1,4 +1,4 @@
-# react-resume
+# Resume
 
 A modern, clean resume designed for web developers.
 
