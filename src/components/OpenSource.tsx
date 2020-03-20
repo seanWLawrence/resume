@@ -2,6 +2,8 @@ import React, { memo, FC } from "react";
 
 import Card from "./Card";
 
+import { contact } from "src/data";
+
 import styles from "./OpenSource.module.sass";
 
 interface OpenSourceContribution {
@@ -65,6 +67,18 @@ let OpenSource: FC<OpenSourceProps> = ({
         title="Projects I've Created"
         projects={openSourceProjects}
       />
+
+      <p>
+        And{" "}
+        <a
+          href={contact.gitHubUrl}
+          target="_blank"
+          rel="nofollow noreferrer noopener"
+        >
+          more
+        </a>
+        ...
+      </p>
     </Card>
   );
 };
