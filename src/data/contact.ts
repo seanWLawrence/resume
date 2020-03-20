@@ -27,7 +27,7 @@ export default {
     },
     {
       name: "Website",
-      url: "https://seanlawrence.netlify.com",
+      url: "https://sean-lawrence.com",
       logo: "website-logo.png"
     }
   ]
