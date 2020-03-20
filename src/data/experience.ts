@@ -13,7 +13,7 @@ export default {
       ],
       responsibilities: [
         "Build/maintain frontend and backend tools like course registrations, attendance tracker, and an advanced query builder table to support staff and students at scale of ~1.2M requests per month (Ruby on Rails, React, GraphQL, Apollo).",
-        "Collaborate closely with design to create accessible, mobile-friendly pages and a detailed style guide.",
+        "Collaborate closely with designer to create accessible, mobile-friendly pages and a detailed style guide.",
         "Coach group of five students on writing production-ready querying/mutating data using GraphQL and writing composable React components for a student project on our company's codebase.",
         "Conduct in-house user testing with staff and students (main users) to improve existing features and inform development of new features."
       ]
