@@ -57,7 +57,12 @@ let SocialMediaAccounts: FC<SocialMediaAccountsProps> = ({
     <span className={styles.socialMediaAccountsWrapper}>
       {socialMediaAccounts.map(({ name, url, logo }) => {
         return (
-          <a key={name} href={url}>
+          <a
+            key={name}
+            href={url}
+            target="_blank"
+            rel="noreferrer nofollow noopener"
+          >
             <img
               className={styles.logo}
               src={require(`../assets/${logo}`)}

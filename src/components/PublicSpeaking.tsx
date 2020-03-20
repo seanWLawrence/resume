@@ -21,7 +21,7 @@ let PublicSpeaking: FC<PublicSpeakingProps> = ({ publicSpeakings }) => {
       <div className={styles.publicSpeakingWrapper}>
         {publicSpeakings.map(({ name, description, url, location }) => {
           return (
-            <div key={name}>
+            <div key={name} className={styles.publicSpeakingSectionWrapper}>
               <h6>
                 {url ? (
                   <a href={url} className={styles.projectName}>

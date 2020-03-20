@@ -22,9 +22,14 @@ let OpenSourceSection: FC<OpenSourceSectionProps> = ({ projects, title }) => {
       <h5 className={styles.openSourceSectionHeader}>{title}</h5>
       {projects.map(({ name, description, url, programmingLanguage }) => {
         return (
-          <div key={name}>
+          <div key={name} className={styles.openSourceProjectWrapper}>
             <h6>
-              <a href={url} className={styles.projectName}>
+              <a
+                href={url}
+                className={styles.projectName}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
                 {name}
               </a>{" "}
               <span className={styles.programmingLanguage}>
@@ -56,7 +61,10 @@ let OpenSource: FC<OpenSourceProps> = ({
         projects={openSourceContributions}
       />
 
-      <OpenSourceSection title="Projects" projects={openSourceProjects} />
+      <OpenSourceSection
+        title="Projects I've Created"
+        projects={openSourceProjects}
+      />
     </Card>
   );
 };

@@ -9,7 +9,9 @@ export default {
     "GraphQL/Apollo",
     "Ruby/Rails",
     "HTML",
-    "SCSS/SASS/CSS"
+    "SCSS/SASS/CSS",
+    "Cypress/Jest/Enzyme/RSpec",
+    "Axe/Lighthouse"
   ],
   socialMediaAccounts: [
     {
