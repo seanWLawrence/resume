@@ -4,7 +4,8 @@ export default {
   city: "Seattle",
   state: "WA",
   phone: "210-632-0555",
-  gitHubUrl: "https://github.com/seanWLawrence",
+  gitHubUrl:
+    "https://github.com/seanWLawrence?tab=repositories&q=&type=source&language=",
   programmingLanguages: [
     "TypeScript/Javascript/React",
     "GraphQL/Apollo",
