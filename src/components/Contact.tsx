@@ -106,6 +106,7 @@ let Contact: FC<ContactProps> = ({
                   target="_blank"
                   rel="nofollow noreferrer noopener"
                   className={styles.printerIcon}
+                  aria-label="View printer friendly page"
                   to="/?printerFriendly=true"
                 >
                   🖨
