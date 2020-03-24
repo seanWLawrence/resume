@@ -103,6 +103,8 @@ let Contact: FC<ContactProps> = ({
               {name}
               {!isPrinterFriendlyMode && (
                 <Link
+                  target="_blank"
+                  rel="nofollow noreferrer noopener"
                   className={styles.printerIcon}
                   to="/?printerFriendly=true"
                 >
