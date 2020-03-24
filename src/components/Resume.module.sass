@@ -15,7 +15,6 @@ $shadow-size: 5px
     font-size: 2.25rem
     margin-bottom: 1rem
 
-
 .headerWrapper
   background-color: $light-gray
   margin-bottom: 2rem
@@ -33,4 +32,30 @@ $shadow-size: 5px
     &:last-child
       padding-bottom: 3rem
 
+.printerFriendlyHeaderWrapper
+  padding: 0
+  width: 90vw
+  max-width: 700px
+  background-color: white
+  padding: 0 3rem
+  margin: 0
 
+  &:first-child
+    padding-top: 1rem 
+    border-top-left-radius: 1rem
+    border-top-right-radius: 1rem
+
+  &:last-child
+    padding-bottom: 1rem 
+    border-bottom-left-radius: 1rem
+    border-bottom-right-radius: 1rem
+
+  @media (max-width: 900px)
+    margin-bottom: 0
+    padding: 0 5vw
+
+    &:first-child
+      border-radius: 0
+
+    &:last-child
+      border-radius: 0

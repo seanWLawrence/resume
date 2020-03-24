@@ -2,7 +2,7 @@ import React, { FC, memo } from "react";
 
 import Card from "./Card";
 
-import { prettyDate } from "src/lib";
+import { prettyDate, useIsPrinterFriendlyMode } from "src/lib";
 
 import styles from "./Experience.module.sass";
 
@@ -25,12 +25,16 @@ interface StringListProps {
 }
 
 let StringList: FC<StringListProps> = ({ items, title }) => {
+  let isPrinterFriendlyMode = useIsPrinterFriendlyMode();
+
+  let displayItems = isPrinterFriendlyMode ? items.slice(0, 3) : items;
+
   return (
     <div>
       <h6 className={styles.smallTitle}>{title}</h6>
 
       <ul>
-        {items.map(item => {
+        {displayItems.map(item => {
           return <li key={item}>{item}</li>;
         })}
       </ul>

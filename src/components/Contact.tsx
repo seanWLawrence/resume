@@ -1,6 +1,9 @@
 import React, { FC, memo } from "react";
+import { Link } from "react-router-dom";
 
 import Card from "./Card";
+
+import { useIsPrinterFriendlyMode } from "src/lib";
 
 import styles from "./Contact.module.sass";
 
@@ -84,6 +87,8 @@ let Contact: FC<ContactProps> = ({
   state,
   socialMediaAccounts
 }) => {
+  let isPrinterFriendlyMode = useIsPrinterFriendlyMode();
+
   return (
     <header>
       <Card>
@@ -94,7 +99,17 @@ let Contact: FC<ContactProps> = ({
             <SocialMediaAccounts socialMediaAccounts={socialMediaAccounts} />
           </div>
           <div>
-            <h1 className={styles.name}>{name}</h1>
+            <h1 className={styles.name}>
+              {name}
+              {!isPrinterFriendlyMode && (
+                <Link
+                  className={styles.printerIcon}
+                  to="/?printerFriendly=true"
+                >
+                  🖨
+                </Link>
+              )}
+            </h1>
 
             <div>
               <div className={styles.programmingLanguageWrapper}>
@@ -111,9 +126,9 @@ let Contact: FC<ContactProps> = ({
               <address>
                 <p>
                   <a href={`tel:1-${phone}`}>{phone}</a>
-                  <div className={styles.emailWrapper}>
+                  <span className={styles.emailWrapper}>
                     <a href={`mailto:${email}`}>{email}</a>
-                  </div>
+                  </span>
                 </p>
               </address>
             </div>
