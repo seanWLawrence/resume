@@ -40,10 +40,10 @@ export default {
           "film projects",
           "https://www.youtube.com/user/beastgripTV"
         )} with our gear and communicate directly with our users via phone and email to grow our product/market fit. Resulted in ${createNewTabLink(
-          "several successfully funded Kickstarter campaigns",
+          "3 successfully funded Kickstarter campaigns",
           "https://www.kickstarter.com/discover/advanced?ref=nav_search&term=beastgrip"
         )} raising ~400K.`,
-        `Develop strong partnerships with executives at Apple, Facebook, and several Oscar-winning directors. Resulted in several feature-length films and music videos created on an iPhone with Beastgrip gear: ${createNewTabLink(
+        `Develop strong partnerships with executives at Apple, Facebook, and 3 Oscar-winning directors. Resulted in several feature-length films and music videos created on an iPhone with Beastgrip gear: ${createNewTabLink(
           'Steven Soderberg\'s "Unsane"',
           "https://beastgrip.com/blogs/news/steven-soderberghs-unsane-film-shot-with-iphone-and-beastgrip-pro"
         )}, ${createNewTabLink(
