@@ -10,7 +10,6 @@ interface Job {
   company: { name: string; url: string };
   startDate: Date;
   endDate?: Date;
-  accomplishments: string[];
   responsibilities: string[];
   title: string;
 }
@@ -21,18 +20,15 @@ interface ExperienceProps {
 
 interface StringListProps {
   items: string[];
-  title: string;
 }
 
-let StringList: FC<StringListProps> = ({ items, title }) => {
+let StringList: FC<StringListProps> = ({ items }) => {
   let isPrinterFriendlyMode = useIsPrinterFriendlyMode();
 
   let displayItems = isPrinterFriendlyMode ? items.slice(0, 3) : items;
 
   return (
     <div>
-      <h6 className={styles.smallTitle}>{title}</h6>
-
       <ul>
         {displayItems.map(item => {
           return <li key={item}>{item}</li>;
@@ -68,34 +64,24 @@ let RightArrow = () => (
 let Experience: FC<ExperienceProps> = ({ jobs }) => {
   return (
     <Card>
-      {jobs.map(
-        ({
-          company,
-          startDate,
-          endDate,
-          accomplishments,
-          responsibilities,
-          title
-        }) => {
-          return (
-            <div key={company.name} className={styles.jobWrapper}>
-              <h5>
-                <a href={company.url}>{company.name}</a>
-                <span>
-                  <Time date={startDate} />
-                  <RightArrow />
-                  <Time date={endDate} />
-                </span>
-              </h5>
+      {jobs.map(({ company, startDate, endDate, responsibilities, title }) => {
+        return (
+          <div key={company.name} className={styles.jobWrapper}>
+            <h5>
+              <a href={company.url}>{company.name}</a>
+              <span>
+                <Time date={startDate} />
+                <RightArrow />
+                <Time date={endDate} />
+              </span>
+            </h5>
 
-              <h6 className={styles.title}>{title}</h6>
+            <h6 className={styles.title}>{title}</h6>
 
-              <StringList items={accomplishments} title="Accomplishments" />
-              <StringList items={responsibilities} title="Responsibilities" />
-            </div>
-          );
-        }
-      )}
+            <StringList items={responsibilities} />
+          </div>
+        );
+      })}
     </Card>
   );
 };
