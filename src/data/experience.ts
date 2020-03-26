@@ -1,3 +1,11 @@
+interface CreateNewTabLink {
+  (text: string, href: string): string;
+}
+
+let createNewTabLink: CreateNewTabLink = (text, href) => {
+  return `<a href="${href}" target="_blank" rel="nofollow noreferrer nooopener">${text}</a>`;
+};
+
 export default {
   jobs: [
     {
@@ -16,8 +24,35 @@ export default {
       startDate: new Date("2015-01-10"),
       responsibilities: [
         "Lead product development of a custom-built e-commerce SaaS product with user permissions, CMS and integrated shipping service (React.js, Node.js, Express.js).",
-        "Collaborate with the CEO on designs for new rigs, lenses and applications for both mobile and web. Conduct internal dogfooding/film projects with our gear and communicate directly with our users via phone and email to grow our product/market fit. Resulted in several successfully funded Kickstarter campaigns.",
-        'Develop strong partnerships with executives at Apple, Facebook, and several Oscar-winning directors. Resulted in several feature-length films and music videos created on an iPhone with Beastgrip gear. (Steven Soderberg\'s "Unsane", Olivia Wilde\'s "No Love Like Yours", and John Legend\'s "A Good Night").'
+        `Collaborate with the CEO on designs for new ${createNewTabLink(
+          "rigs",
+          "https://beastgrip.com/collections/shop-now/rigs-and-bundles"
+        )}, ${createNewTabLink(
+          "lenses",
+          "https://beastgrip.com/collections/shop-now/lenses-adapters"
+        )} and applications for both ${createNewTabLink(
+          "mobile",
+          "https://beastgrip.com/pages/beastcam"
+        )} and ${createNewTabLink(
+          "web",
+          "https://beastgrip.com/"
+        )}. Conduct internal dogfooding/${createNewTabLink(
+          "film projects",
+          "https://www.youtube.com/user/beastgripTV"
+        )} with our gear and communicate directly with our users via phone and email to grow our product/market fit. Resulted in ${createNewTabLink(
+          "several successfully funded Kickstarter campaigns",
+          "https://www.kickstarter.com/discover/advanced?ref=nav_search&term=beastgrip"
+        )} raising ~400K.`,
+        `Develop strong partnerships with executives at Apple, Facebook, and several Oscar-winning directors. Resulted in several feature-length films and music videos created on an iPhone with Beastgrip gear: ${createNewTabLink(
+          'Steven Soderberg\'s "Unsane"',
+          "https://beastgrip.com/blogs/news/steven-soderberghs-unsane-film-shot-with-iphone-and-beastgrip-pro"
+        )}, ${createNewTabLink(
+          'Olivia Wilde\'s "No Love Like Yours"',
+          "https://beastgrip.com/blogs/news/113315780-olivia-wilde-directs-music-video-no-love-like-yours-for-edward-sharpe-and-the-magnetic-zeros-shot-on-an-iphone-and-the-beastgrip-dof-adapter"
+        )}, and ${createNewTabLink(
+          'John Legend\'s "A Good Night"',
+          "https://beastgrip.com/blogs/news/john-legends-a-good-night-music-video-shot-with-google-pixel-2-and-beastgrip-pro"
+        )}.`
       ]
     }
   ]

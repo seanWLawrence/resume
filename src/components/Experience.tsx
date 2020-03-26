@@ -18,11 +18,11 @@ interface ExperienceProps {
   jobs: Job[];
 }
 
-interface StringListProps {
+interface HTMLStringListProps {
   items: string[];
 }
 
-let StringList: FC<StringListProps> = ({ items }) => {
+let HTMLStringList: FC<HTMLStringListProps> = ({ items }) => {
   let isPrinterFriendlyMode = useIsPrinterFriendlyMode();
 
   let displayItems = isPrinterFriendlyMode ? items.slice(0, 3) : items;
@@ -31,7 +31,7 @@ let StringList: FC<StringListProps> = ({ items }) => {
     <div>
       <ul>
         {displayItems.map(item => {
-          return <li key={item}>{item}</li>;
+          return <li key={item} dangerouslySetInnerHTML={{ __html: item }} />;
         })}
       </ul>
     </div>
@@ -78,7 +78,7 @@ let Experience: FC<ExperienceProps> = ({ jobs }) => {
 
             <h6 className={styles.title}>{title}</h6>
 
-            <StringList items={responsibilities} />
+            <HTMLStringList items={responsibilities} />
           </div>
         );
       })}
